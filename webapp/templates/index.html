@@ -18,9 +18,10 @@
               <h2>Новости</h2>
               {% for news in news_list %}
                 <h3><a href = '{{ news.url }}'>{{ news.title }}</a></h3>
-                <p>{{ news.publish_date }}</p>
+                <p>{{ news.publish_date.strftime('%Y-%m-%d') }}</p>
                 <hr />
               {% endfor %}
+            </div>
 
             <div class="col4">
                 <h2>Прогноз погоды</h2>

@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
-from webapp.model import News
+from webapp.model import News, db
 
 def get_html(url):
     try:
@@ -33,5 +33,5 @@ def save_news(title, url, published):
     news_exists = News.query.filter(News.url == url).count()
     if not news_exists:
         new_news = News(title=title, url=url, published=published)
-        db.add(new_news)
-        db.commit()
+        db.session.add(new_news)
+        db.session.commit()

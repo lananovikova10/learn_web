@@ -25,8 +25,13 @@
               {{ form.remember_me() }} {{
               form.remember_me.label(class_='form-check-label') }}
             </div>
-            {{ form.submit }}
+            {{ form.submit }}<br />
           </form>
         </div>
       </div>
+      <div class="row">
+        <div class="col-8">
+           Ещё не зарегистрированы? <a href="{{ url_for('user.register') }}"> Зарегистрируйтесь!</a>
+        </div>
+     </div>
 {% endblock %}

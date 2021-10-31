@@ -2,7 +2,7 @@
 
 {% block content %}
         <div class="row">
-            <div class="col-4">
+            <div class="col-8">
               {% with messages = get_flashed_messages() %}
               {% if messages %}
                   <div class="alert alert-warning" role="alert">
@@ -23,7 +23,7 @@
               {% endfor %}
             </div>
 
-            <div class="col-8">
+            <div class="col-4">
                 <h2>Прогноз погоды</h2>
                 {% if weather %}
                     Сейчас {{ weather_description }} температура {{ weather.temp_C }}°C, ощущается как {{ weather.FeelsLikeC }}°C. Влажность воздуха {{ weather.humidity }}%, UV Индекс {{ weather.uvIndex }}

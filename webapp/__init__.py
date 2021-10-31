@@ -4,7 +4,6 @@ from flask_migrate import Migrate, migrate
 from flask_login import LoginManager
 
 
-from webapp.user.forms import LoginForm
 from webapp.weather import weather_by_city
 
 
@@ -23,9 +22,8 @@ login_manager.login_view = 'user.login'
 def load_user(user_id):
     return User.query.get(user_id)
 
+
 from webapp.user.models import User
-from webapp.news.models import News
-#from webapp.python_org_news import get_python_news
 from webapp.user.views import blueprint as user_blueprint
 from webapp.admin.views import blueprint as admin_blueprint
 from webapp.news.views import blueprint as  news_blueprint

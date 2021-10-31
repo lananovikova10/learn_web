@@ -26,7 +26,7 @@ def get_python_news():
                 published = datetime.strptime(published, '%Y-%m-%d')
             except(ValueError):
                 published = datetime.now()
-        save_news(title=title, url=url, published=published)
+            save_news(title=title, url=url, published=published)
     return False 
 
 def save_news(title, url, published):
@@ -36,4 +36,5 @@ def save_news(title, url, published):
         db.session.add(new_news)
         db.session.commit()
 
-from webapp import db, News 
+from webapp import db
+from webapp.news.models import News 

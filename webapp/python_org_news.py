@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
-from webapp.model import News, db
+
 
 def get_html(url):
     try:
@@ -35,3 +35,5 @@ def save_news(title, url, published):
         new_news = News(title=title, url=url, published=published)
         db.session.add(new_news)
         db.session.commit()
+
+from webapp import db, News 
